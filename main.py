@@ -23,7 +23,7 @@ TEXT = (
 def main():
     # Deterministic by construction: a fixed string written verbatim, so
     # both graded runs produce byte-identical output. No network, no
-    # randomness, no clock.
+    # randomness, no clock, no environment beyond the output directory.
     assert 1 <= len(TEXT) <= 280, len(TEXT)
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
